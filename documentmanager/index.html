@@ -7,11 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="https://sh-alg.github.io/SM-IMG/01-SMH-FEVICON_ICON.png">
+<link rel="icon" type="image/png" href="https://sanjeeva-hspl.github.io/SM-IMG/01-SMH-FEVICON_ICON.png">
 <style>
 
 /* CM001 - CSS Variables */
-:root { --primary-blue: #1e40af; --bg-body: #f3f4f6; --bg-surface: #ffffff; --bg-hover: #f9fafb; --text-main: #111827; --text-muted: #6b7280; --border-color: #e5e7eb; --header-height: 52px; --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1); --radius-md: 6px; }
+:root { --primary-blue: #1e40af; --bg-body: #f3f4f6; --bg-surface: #ffffff; --bg-hover: #f9fafb; --text-main: #111827; --text-muted: #6b7280; --border-color: #e5e7eb; --header-height: 62px; --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1); --radius-md: 6px; }
 
 /* CM002 - Global Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto Slab', serif; }
@@ -29,8 +29,8 @@ body { background-color: var(--bg-body); color: var(--text-main); font-size: 13p
 .main-header { height: var(--header-height); background: linear-gradient(-45deg, #0f172a, #1e40af, #1d4ed8, #0369a1, #111827); background-size: 400% 400%; animation: gradientBg 18s ease infinite; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; padding: 0 18px; box-shadow: var(--shadow-sm); z-index: 100; position: sticky; top: 0; width: 100%; }
 @keyframes gradientBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 .header-brand { display: flex; align-items: center; gap: 10px; }
-.header-logo-circle { width: 32px; height: 32px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0; }
-.header-logo { height: 26px; width: 26px; object-fit: contain; }
+.header-logo-circle { width: 44px; height: 44px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0; }
+.header-logo { height: 36px; width: 36px; object-fit: contain; }
 .header-title { font-size: 0.98rem; font-weight: 700; color: #ffffff; letter-spacing: 0.3px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
 
 /* CM006 - Header Right Controls Layout */
@@ -50,29 +50,6 @@ body { background-color: var(--bg-body); color: var(--text-main); font-size: 13p
 /* CM009 - Dropdown Styles */
 .form-dropdown { padding: 4px 10px; font-size: 0.8rem; height: 30px; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-md); background-color: rgba(255,255,255,0.95); color: var(--text-main); cursor: pointer; outline: none; transition: all 0.2s; min-width: 190px; max-width: 270px; font-weight: 600; display: none; }
 .form-dropdown:hover, .form-dropdown:focus { border-color: #ffffff; background-color: #ffffff; box-shadow: 0 0 5px rgba(255,255,255,0.5); }
-
-/* CM010 - Patient Verification Bar Styles */
-.verify-container { background: #ffffff; border-bottom: 1px solid var(--border-color); padding: 10px 16px; box-shadow: var(--shadow-sm); display: none; flex-direction: column; gap: 10px; z-index: 90; }
-.verify-form { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: #f8fafc; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; }
-.verify-group { display: flex; align-items: center; gap: 6px; }
-.verify-label { font-size: 0.75rem; font-weight: 700; color: #1e3a8a; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
-.verify-input { padding: 5px 10px; font-size: 0.78rem; border: 1px solid #cbd5e1; border-radius: var(--radius-md); outline: none; transition: all 0.2s; width: 140px; font-weight: 500; }
-.verify-input:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(30,64,175,0.15); background: #ffffff; }
-.verify-or { font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; padding: 0 4px; }
-.verify-btn { padding: 6px 16px; background: linear-gradient(135deg, #1e40af, #1d4ed8); color: #ffffff; border: none; border-radius: var(--radius-md); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 4px rgba(30,64,175,0.2); }
-.verify-btn:hover { background: linear-gradient(135deg, #1e3a8a, #1e40af); transform: translateY(-1px); }
-.reset-btn { padding: 6px 12px; background: #e2e8f0; color: #475569; border: none; border-radius: var(--radius-md); font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-.reset-btn:hover { background: #cbd5e1; color: #1e293b; }
-
-/* CM011 - Patient Info Card & Plus Action Buttons */
-.patient-card { background: linear-gradient(135deg, #eff6ff, #f0f9ff); border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; display: none; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; box-shadow: inset 0 1px 2px rgba(255,255,255,0.8); animation: fadeIn 0.3s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.patient-item { display: flex; flex-direction: column; gap: 4px; }
-.patient-item-label { font-size: 0.68rem; font-weight: 700; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px; }
-.patient-val-row { display: flex; align-items: center; gap: 6px; }
-.plus-btn { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #2563eb; color: #ffffff; border: none; border-radius: 50%; font-size: 11px; font-weight: bold; cursor: pointer; transition: all 0.2s; box-shadow: 0 1px 3px rgba(37,99,235,0.3); }
-.plus-btn:hover { background: #1d4ed8; transform: scale(1.15); }
-.patient-item-value { font-size: 0.82rem; font-weight: 700; color: #1e3a8a; word-break: break-word; }
 
 /* CM012 - Content Area & Responsive Frame */
 .main-container { display: none; flex-direction: column; position: relative; flex: 1; }
@@ -117,7 +94,7 @@ iframe { width: 100%; min-height: 80vh; height: 100%; border: none; display: blo
 <header class="main-header">
 <div class="header-brand">
 <div class="header-logo-circle">
-<img src="https://sh-alg.github.io/SM-IMG/01-SMH-FEVICON_ICON.png" alt="Hospital Logo" class="header-logo" onerror="this.style.display='none'">
+<img src="https://sanjeeva-hspl.github.io/SM-IMG/01-SMH-FEVICON_ICON.png" alt="Hospital Logo" class="header-logo" onerror="this.style.display='none'">
 </div>
 <span class="header-title">SANJEEVA MULTISPECIALITY HOSPITAL - Document Manager</span>
 </div>
@@ -131,45 +108,6 @@ iframe { width: 100%; min-height: 80vh; height: 100%; border: none; display: blo
 <!-- CM017 - Security Notice Ticker Section -->
 <div id="tickerContainer" class="ticker-container">
 <div class="ticker-content">Security Notice: All forms, applications, and systems are authorised and owned by SANJEEVA MULTISPECIALITY HOSPITAL. Every action is securely authenticated, recorded, and monitored. Any unauthorised access, use, or attempt to access these systems from an unapproved device is strictly prohibited. The hospital reserves the right to collect device and access information for security purposes, and strict legal action will be taken against any unauthorised activity.</div>
-</div>
-
-<!-- CM018 - Patient Verification Panel -->
-<div id="verifyContainer" class="verify-container">
-<div class="verify-form">
-<div class="verify-group">
-<span class="verify-label">💳 Enter PID :</span>
-<input type="text" id="pidInput" class="verify-input" placeholder="e.g. PID101" oninput="this.value = this.value.toUpperCase()">
-</div>
-<span class="verify-or">OR</span>
-<div class="verify-group">
-<span class="verify-label">📱 Enter Mobile Number :</span>
-<input type="text" id="mobileInput" class="verify-input" placeholder="e.g. 9876543210" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-</div>
-<button class="verify-btn" onclick="verifyPatient()">Verify</button>
-<button class="reset-btn" onclick="resetPatientVerification()">Reset</button>
-</div>
-<div id="patientCard" class="patient-card">
-<div class="patient-item">
-<span class="patient-item-label">🆔 PPID</span>
-<div class="patient-val-row"><button class="plus-btn" onclick="insertIntoForm('PPID', resPpid.textContent)" title="Insert into form">+</button><span id="resPpid" class="patient-item-value">-</span></div>
-</div>
-<div class="patient-item">
-<span class="patient-item-label">👤 Full Name</span>
-<div class="patient-val-row"><button class="plus-btn" onclick="insertIntoForm('Full Name', resName.textContent)" title="Insert into form">+</button><span id="resName" class="patient-item-value">-</span></div>
-</div>
-<div class="patient-item">
-<span class="patient-item-label">🚻 Gender</span>
-<div class="patient-val-row"><button class="plus-btn" onclick="insertIntoForm('Gender', resGender.textContent)" title="Insert into form">+</button><span id="resGender" class="patient-item-value">-</span></div>
-</div>
-<div class="patient-item">
-<span class="patient-item-label">📞 Number</span>
-<div class="patient-val-row"><button class="plus-btn" onclick="insertIntoForm('Mobile', resMobile.textContent)" title="Insert into form">+</button><span id="resMobile" class="patient-item-value">-</span></div>
-</div>
-<div class="patient-item">
-<span class="patient-item-label">🏡 Village</span>
-<div class="patient-val-row"><button class="plus-btn" onclick="insertIntoForm('Village', resVillage.textContent)" title="Insert into form">+</button><span id="resVillage" class="patient-item-value">-</span></div>
-</div>
-</div>
 </div>
 
 <!-- CM019 - Authorization Login Section -->
@@ -217,16 +155,13 @@ iframe { width: 100%; min-height: 80vh; height: 100%; border: none; display: blo
 
 // CM022 - Application State & Data Setup
 const defaultFormsData = [
-{id:"form_1",file:"https://sh-alg.github.io/WEB-V1.0/forms/deliverycertificate.html",name:"Delivery Certificate"},
-{id:"form_2",file:"https://sh-alg.github.io/WEB-V1.0/forms/dischargesummary.html",name:"Discharge Summary"},
-{id:"form_3",file:"https://sh-alg.github.io/WEB-V1.0/forms/feereceipt.html",name:"Fee Receipt"},
-{id:"form_4",file:"https://sh-alg.github.io/WEB-V1.0/forms/ipbill.HTML",name:"IP Bill"},
-{id:"form_5",file:"https://sh-alg.github.io/WEB-V1.0/forms/medicinebill.html",name:"Medicine Bill"},
-{id:"form_7",file:"https://sh-alg.github.io/WEB-V1.0/forms/medicallongbill.html",name:"Medicine Long Bill"},
-{id:"form_8",file:"https://sh-alg.github.io/WEB-V1.0/forms/ob1report.html",name:"OB1 Report"},
-{id:"form_9",file:"https://sh-alg.github.io/WEB-V1.0/forms/ob2report.html",name:"OB2 Report"},
-{id:"form_10",file:"https://sh-alg.github.io/WEB-V1.0/forms/obreport.html",name:"OB Report"},
-{id:"form_11",file:"https://sh-alg.github.io/WEB-V1.0/forms/sterilaizationcertificate.html",name:"Sterilization Certificate"}
+{id:"form_1",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/deliverycertificate.html",name:"Delivery Certificate"},
+{id:"form_2",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/dischargesummary.html",name:"Discharge Summary"},
+{id:"form_3",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/feereceipt.html",name:"Fee Receipt"},
+{id:"form_4",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/ob1report.html",name:"OB1 Report"},
+{id:"form_5",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/ob2report.html",name:"OB2 Report"},
+{id:"form_6",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/obreport.html",name:"OB Report"},
+{id:"form_7",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/sterilaizationcertificate.html",name:"Sterilization Certificate"}
 ];
 const patientDatabase = [
 {ppid:"PID101",fullName:"K. RAMESH REDDY",gender:"MALE",mobile:"9876543210",village:"ALLAGADDA"},
@@ -247,16 +182,7 @@ const loginError = document.getElementById('loginError');
 const liveClock = document.getElementById('liveClock');
 const logoutBtn = document.getElementById('logoutBtn');
 const tickerContainer = document.getElementById('tickerContainer');
-const verifyContainer = document.getElementById('verifyContainer');
 const mainContainer = document.getElementById('mainContainer');
-const pidInput = document.getElementById('pidInput');
-const mobileInput = document.getElementById('mobileInput');
-const patientCard = document.getElementById('patientCard');
-const resPpid = document.getElementById('resPpid');
-const resName = document.getElementById('resName');
-const resGender = document.getElementById('resGender');
-const resMobile = document.getElementById('resMobile');
-const resVillage = document.getElementById('resVillage');
 
 // CM024 - App Initialization Method
 function initApp() { startClock(); checkSession(); renderDropdown(); loadForm('form_1'); setupEvents(); }
@@ -266,7 +192,7 @@ function startClock() { updateClock(); setInterval(updateClock, 1000); }
 function updateClock() { const now = new Date(); liveClock.textContent = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' }); }
 
 // CM026 - Session Check, Login & Keyboard Navigation Logic
-function checkSession() { if (sessionStorage.getItem('isLoggedIn') === 'true') { loginWrapper.style.display = 'none'; formDropdown.style.display = 'inline-block'; logoutBtn.style.display = 'inline-flex'; tickerContainer.style.background = '#ffffff'; tickerContainer.style.borderBottom = '1px solid #e2e8f0'; verifyContainer.style.display = 'flex'; mainContainer.style.display = 'flex'; } else { loginWrapper.style.display = 'flex'; formDropdown.style.display = 'none'; logoutBtn.style.display = 'none'; tickerContainer.style.background = 'transparent'; tickerContainer.style.borderBottom = '1px solid rgba(255,255,255,0.1)'; verifyContainer.style.display = 'none'; mainContainer.style.display = 'none'; } }
+function checkSession() { if (sessionStorage.getItem('isLoggedIn') === 'true') { loginWrapper.style.display = 'none'; formDropdown.style.display = 'inline-block'; logoutBtn.style.display = 'inline-flex'; tickerContainer.style.background = '#ffffff'; tickerContainer.style.borderBottom = '1px solid #e2e8f0'; mainContainer.style.display = 'flex'; } else { loginWrapper.style.display = 'flex'; formDropdown.style.display = 'none'; logoutBtn.style.display = 'none'; tickerContainer.style.background = 'transparent'; tickerContainer.style.borderBottom = '1px solid rgba(255,255,255,0.1)'; mainContainer.style.display = 'none'; } }
 function handleLogin() { const user = usernameInput.value.trim().toUpperCase(); const pass = passwordInput.value.trim(); if (user === 'SM01' && pass === '1111') { sessionStorage.setItem('isLoggedIn', 'true'); checkSession(); loginError.style.display = 'none'; } else { loginError.style.display = 'block'; passwordInput.value = ''; } }
 function handleLogout() { sessionStorage.removeItem('isLoggedIn'); usernameInput.value = ''; passwordInput.value = ''; checkSession(); }
 function handleUsernameKey(e) { if (e.key === 'Enter') { e.preventDefault(); passwordInput.focus(); } }
@@ -279,13 +205,8 @@ function renderDropdown() { formDropdown.innerHTML = ''; defaultFormsData.forEac
 function loadForm(id) { const form = defaultFormsData.find(f => f.id === id); if(!form) return; activeFormId = id; formDropdown.value = id; formViewer.style.display = 'block'; iframeLoader.classList.remove('hidden'); formViewer.src = form.file; formViewer.onload = () => { iframeLoader.classList.add('hidden'); adjustIframeHeight(); }; formViewer.onerror = () => { iframeLoader.classList.add('hidden'); }; }
 function adjustIframeHeight() { try { const iframeDoc = formViewer.contentDocument || formViewer.contentWindow.document; if (iframeDoc && iframeDoc.body) { const scrollH = iframeDoc.body.scrollHeight; if (scrollH > 400) formViewer.style.height = (scrollH + 30) + 'px'; } } catch(e) {} }
 
-// CM029 - Patient Verification & Data Auto-Insert Simulation
-function verifyPatient() { const pidVal = pidInput.value.trim().toUpperCase(); const mobileVal = mobileInput.value.trim(); if (!pidVal && !mobileVal) { return; } let record = patientDatabase.find(p => (pidVal && p.ppid === pidVal) || (mobileVal && p.mobile === mobileVal)); if (!record) { record = { ppid: pidVal || ('PID' + Math.floor(1000 + Math.random() * 9000)), fullName: 'PATIENT RECORD FOUND', gender: 'MALE', mobile: mobileVal || '9876543210', village: 'ALLAGADDA' }; } resPpid.textContent = record.ppid; resName.textContent = record.fullName; resGender.textContent = record.gender; resMobile.textContent = record.mobile; resVillage.textContent = record.village; patientCard.style.display = 'grid'; }
-function resetPatientVerification() { pidInput.value = ''; mobileInput.value = ''; patientCard.style.display = 'none'; }
-function insertIntoForm(label, value) { if (!value || value === '-') return; try { const iframeWin = formViewer.contentWindow; iframeWin.postMessage({ type: 'INSERT_PATIENT_DATA', label: label, value: value }, '*'); } catch(e) {} }
-
 // CM030 - Event Listeners & Input Filters
-function setupEvents() { formDropdown.addEventListener('change', (e) => { loadForm(e.target.value); }); pidInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') verifyPatient(); }); mobileInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') verifyPatient(); }); }
+function setupEvents() { formDropdown.addEventListener('change', (e) => { loadForm(e.target.value); }); }
 document.addEventListener('DOMContentLoaded', initApp);
 
 </script>
