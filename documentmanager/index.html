@@ -155,14 +155,14 @@ iframe { width: 100%; min-height: 80vh; height: 100%; border: none; display: blo
 
 // CM022 - Application State & Data Setup
 const defaultFormsData = [
-{id:"form_1",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/deliverycertificate.html",name:"Delivery Certificate"},
-{id:"form_2",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/dischargesummary.html",name:"Discharge Summary"},
-{id:"form_3",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/feereceipt.html",name:"Fee Receipt"},
-{id:"form_4",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/ob1report.html",name:"OB1 Report"},
-{id:"form_5",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/ob2report.html",name:"OB2 Report"},
-{id:"form_6",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/obreport.html",name:"OB Report"},
-{id:"form_7",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/sterilaizationcertificate.html",name:"Sterilization Certificate"},
-{id:"form_8",file:"https://sanjeeva-hspl.github.io/WEB-V2.0/documentmanager/medicinebill.html",name:"Medicine Bill"}
+{id:"form_1",file:"https://sanjeevahospital.in/documentmanager/deliverycertificate.html",name:"Delivery Certificate"},
+{id:"form_2",file:"https://sanjeevahospital.in/documentmanager/dischargesummary.html",name:"Discharge Summary"},
+{id:"form_3",file:"https://sanjeevahospital.in/documentmanager/feereceipt.html",name:"Fee Receipt"},
+{id:"form_4",file:"https://sanjeevahospital.in/documentmanager/ob1report.html",name:"OB1 Report"},
+{id:"form_5",file:"https://sanjeevahospital.in/documentmanager/ob2report.html",name:"OB2 Report"},
+{id:"form_6",file:"https://sanjeevahospital.in/documentmanager/obreport.html",name:"OB Report"},
+{id:"form_7",file:"https://sanjeevahospital.in/documentmanager/sterilaizationcertificate.html",name:"Sterilization Certificate"},
+{id:"form_8",file:"https://sanjeevahospital.in/documentmanager/medicinebill.html",name:"Medicine Bill"}
 ];
 const patientDatabase = [
 {ppid:"PID101",fullName:"K. RAMESH REDDY",gender:"MALE",mobile:"9876543210",village:"ALLAGADDA"},
@@ -203,8 +203,37 @@ function handleEnter(e) { if (e.key === 'Enter') { e.preventDefault(); handleLog
 function renderDropdown() { formDropdown.innerHTML = ''; defaultFormsData.forEach(form => { const option = document.createElement('option'); option.value = form.id; option.textContent = form.name; option.dataset.file = form.file; formDropdown.appendChild(option); }); }
 
 // CM028 - Form Loader & Dynamic Height Resizing Logic
-function loadForm(id) { const form = defaultFormsData.find(f => f.id === id); if(!form) return; activeFormId = id; formDropdown.value = id; formViewer.style.display = 'block'; iframeLoader.classList.remove('hidden'); formViewer.src = form.file; formViewer.onload = () => { iframeLoader.classList.add('hidden'); adjustIframeHeight(); }; formViewer.onerror = () => { iframeLoader.classList.add('hidden'); }; }
-function adjustIframeHeight() { try { const iframeDoc = formViewer.contentDocument || formViewer.contentWindow.document; if (iframeDoc && iframeDoc.body) { const scrollH = iframeDoc.body.scrollHeight; if (scrollH > 400) formViewer.style.height = (scrollH + 30) + 'px'; } } catch(e) {} }
+function loadForm(id) { 
+    const form = defaultFormsData.find(f => f.id === id); 
+    if(!form) return; 
+    activeFormId = id; 
+    formDropdown.value = id; 
+    formViewer.style.display = 'block'; 
+    
+    // Show the loader overlay
+    iframeLoader.classList.remove('hidden'); 
+    
+    // Set the source of the iframe
+    formViewer.src = form.file; 
+    
+    // Attempt to hide loader when iframe says it's loaded
+    formViewer.onload = () => { 
+        iframeLoader.classList.add('hidden'); 
+    }; 
+    
+    // Attempt to hide loader if there's an error
+    formViewer.onerror = () => { 
+        iframeLoader.classList.add('hidden'); 
+    }; 
+
+    // FALLBACK: Hide the loader forcibly after 3 seconds 
+    // to prevent getting stuck if cross-origin blocks onload
+    setTimeout(() => {
+        if (!iframeLoader.classList.contains('hidden')) {
+             iframeLoader.classList.add('hidden');
+        }
+    }, 3000);
+}
 
 // CM030 - Event Listeners & Input Filters
 function setupEvents() { formDropdown.addEventListener('change', (e) => { loadForm(e.target.value); }); }
